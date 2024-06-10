@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="list-body">
+        <header>
+            <div class="title">To Do List</div>
+            <div class="info">
+                <div class="list-count"><i class="icon ri-list-check-3"></i>10</div>
+                <div class="login-menu">
+                    <i class="icon ri-account-circle-fill"></i>
+                    <div class="login-container">
+                        <div class="user-icon"><i class="icon ri-account-circle-fill"></i></div>
+                        <div class="user-detail">
+                            <div class="name">Guest</div>
+                            <div class="email">Guest_ID</div>
+                        </div>
+                        <div class="log-btn">
+                            <button type="button" class="login">Log in</button>
+                            <button type="button" class="logout">Log out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="list">
+                <div class="list-detail">
+                    <input type="checkbox" name="checkbox" id="check">
+                    <div class="list-title">Drink Water & perform exercise</div>
+                    <div class="time-stamp"><i class="icon ri-time-line"></i>11:30<div class="done">[complete]</div></div>
+                </div>
+                <div class="list-btn">
+                    <button type="button" class="edit-btn"><i class="icon ri-edit-box-line"></i></button>
+                    <button type="button" class="del-btn"><i class="icon ri-delete-bin-line"></i></button>
+                </div>
+            </div>
+
+            <div class="list">
+                <div class="list-detail">
+                    <input type="checkbox" name="checkbox" id="check">
+                    <div class="list-title">Perform exercise</div>
+                    <div class="time-stamp"><i class="icon ri-time-line"></i>12:30<div class="done">[complete]</div></div>
+                </div>
+                <div class="list-btn">
+                    <button type="button" class="edit-btn"><i class="icon ri-edit-box-line"></i></button>
+                    <button type="button" class="del-btn"><i class="icon ri-delete-bin-line"></i></button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="add-container">
+                <input type="text" placeholder="Add your task">
+                <button type="button" class="add-btn"><i class="icon ri-add-large-fill"></i></button>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>

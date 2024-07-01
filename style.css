@@ -10,13 +10,13 @@
     font-style: normal;
 }
 
-body{
-    height: 100vh;
+body {
+    height: 100dvh;
     background-color: #202020;
     color: #fff;
 }
 
-header{
+header {
     height: 45px;
     padding: 8px;
     background-color: #303030;
@@ -26,37 +26,40 @@ header{
     align-items: center;
 }
 
-.title{
+.title {
     font-size: 18px;
 }
 
-.info{
+.info {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.info .list-count{
-    padding: 2px 5px;
+.info .list-count {
+    padding: 3px 8px;
     background-color: #404040;
-    border-radius: 2px;
+    border-radius: 15px;
 }
 
-.info .login-menu{
-    height: 22px;
+.menu {
+    height: 28px;
+    width: 28px;
     padding: 0 5px;
     background-color: #404040;
-    border-radius: 2px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     font-size: 18px;
-    display: none;/* comment out to show login page*/
 }
 
-.login-menu .icon{
+.menu .icon {
     color: #fff;
 }
 
-.login-menu .login-container{
+.menu .menu-container {
     width: 200px;
     background-color: #404040;
     border: 1px solid #505050;
@@ -69,17 +72,17 @@ header{
     display: none;
 }
 
-.login-container .user-icon{
+.menu-container .user-icon {
     text-align: center;
     font-size: 80px;
 }
 
-.login-container .user-detail{
+.menu-container .user-detail {
     padding: 8px;
     overflow: hidden;
 }
 
-.login-container .user-detail .name{
+.menu-container .user-detail .name {
     padding: 5px;
     background-color: #505050;
     border-bottom: 1px solid #404040;
@@ -91,7 +94,7 @@ header{
     text-overflow: ellipsis;
 }
 
-.login-container .user-detail .email{
+.menu-container .user-detail .email {
     padding: 5px;
     background-color: #505050;
     border-radius: 0 0 5px 5px;
@@ -102,8 +105,8 @@ header{
     text-overflow: ellipsis;
 }
 
-.login-container .log-btn{
-    padding: 5px;
+.menu-container .menu-btn {
+
     background-color: #505050;
     border-top: 1px solid #606060;
     display: flex;
@@ -111,15 +114,16 @@ header{
     cursor: pointer;
 }
 
-.login-container .log-btn .login{
+.menu-container .menu-btn .menu-in {
     width: 100%;
+    padding: 5px;
     background-color: transparent;
     border: 0;
     color: #fff;
     cursor: pointer;
 }
 
-.login-container .log-btn .logout{
+.menu-container .menu-btn .menu-out {
     width: 100%;
     background-color: transparent;
     border: 0;
@@ -128,27 +132,219 @@ header{
     display: none;
 }
 
-.login-container .log-btn:hover{
+.menu-container .menu-btn:hover {
     background-color: #606060;
 }
 
-.login-menu:hover .login-container{
+.menu:hover .menu-container {
     display: block !important;
 }
 
-main{
+/* signup */
+.signup-box {
+    height: 100dvh;
+    width: 100dvw;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+
+.signup-form {
+    position: relative;
+    padding: 15px;
+    background-color: #303030;
+    border-radius: 5px;
+    border: 1px solid #505050;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.signup-form .signup-close {
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.signup-form .signup-close:hover {
+    color: #ff0000;
+}
+
+.signup-form fieldset {
+    padding: 8px;
+    background-color: #404040;
+    border: 1px solid #505050;
+    border-radius: 8px;
+}
+
+.signup-form fieldset legend {
+    padding: 0 2px;
+    font-size: 15px;
+    color: grey;
+}
+
+.signup-form fieldset input[type=text], input[type=email],
+input[type=password] {
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+}
+
+.signup-form .signup-submit-btn {
+    margin: 5px 0;
+    width: 100%;
+    padding: 5px;
+    background-color: #404040;
+    border-radius: 8px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.signup-form .signup-submit-btn:hover {
+    background-color: #505050;
+}
+
+.signup-form .signup-submit-btn:focus {
+    background-color: #00bfff;
+}
+
+.signup-form .cng-pg-signup {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* login */
+.login-box {
+    height: 100dvh;
+    width: 100dvw;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+
+.login-form {
+    position: relative;
+    padding: 15px;
+    background-color: #303030;
+    border-radius: 5px;
+    border: 1px solid #505050;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.login-form .login-close {
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login-form .login-close:hover {
+    color: #ff0000;
+}
+
+.login-form fieldset {
+    padding: 8px;
+    background-color: #404040;
+    border: 1px solid #505050;
+    border-radius: 8px;
+}
+
+.login-form fieldset legend {
+    padding: 0 2px;
+    font-size: 15px;
+    color: grey;
+}
+
+.login-form fieldset input[type=email],
+input[type=password] {
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+}
+
+.login-form .login-submit-btn {
+    margin: 5px 0;
+    width: 100%;
+    padding: 5px;
+    background-color: #404040;
+    border-radius: 8px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-form .login-submit-btn:hover {
+    background-color: #505050;
+}
+
+.login-form .login-submit-btn:focus {
+    background-color: #00bfff;
+}
+
+.login-form .cng-pg-login {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+main {
     margin: 8px 0;
     padding: 0 8px;
-    height: calc(100vh - 142px);
+    height: calc(100dvh - 146px);
     border-radius: 5px;
     overflow: auto;
 }
 
-main::-webkit-scrollbar{
+main::-webkit-scrollbar {
     display: none;
 }
 
-.list{
+.list {
     margin-bottom: 8px;
     padding: 8px;
     background-color: #303030;
@@ -158,29 +354,29 @@ main::-webkit-scrollbar{
     justify-content: space-between;
 }
 
-.list-detail{
+.list-detail {
     display: grid;
     align-items: center;
     grid-template-columns: auto auto;
 }
 
-.list-detail #check{
+.list-detail #check {
     margin-right: 8px;
     grid-row: 1 / span 2;
     cursor: pointer;
 }
 
-.list-title{
+.list-title {
     text-wrap: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.list-detail #check:checked ~ .list-title{
+.list-detail #check:checked~.list-title {
     text-decoration: line-through;
 }
 
-.list-detail .time-stamp{
+.list-detail .time-stamp {
     display: flex;
     flex-wrap: wrap;
     gap: 3px;
@@ -189,21 +385,22 @@ main::-webkit-scrollbar{
     font-size: 12px;
 }
 
-.list-detail .time-stamp .done{
+.list-detail .time-stamp .done {
     display: none;
 }
 
-.list-detail #check:checked ~ .time-stamp .done{
+.list-detail #check:checked~.time-stamp .done {
     display: block !important;
 }
 
-.list-btn{
+.list-btn {
     display: flex;
     gap: 5px;
     align-items: center
 }
 
-.list-btn .edit-btn, .del-btn{
+.list-btn .edit-btn,
+.del-btn {
     width: 30px;
     height: 30px;
     background-color: #484848;
@@ -214,19 +411,20 @@ main::-webkit-scrollbar{
     cursor: pointer;
 }
 
-.list-btn .edit-btn:hover, .del-btn:hover{
+.list-btn .edit-btn:hover,
+.del-btn:hover {
     background-color: #606060;
 }
 
-.list-btn .edit-btn:focus{
+.list-btn .edit-btn:focus {
     background-color: #00bfff;
 }
 
-.list-btn .del-btn:focus{
+.list-btn .del-btn:focus {
     background-color: #ff0000;
 }
 
-footer{
+footer {
     position: sticky;
     bottom: 0;
     padding: 18px;
@@ -236,7 +434,7 @@ footer{
     justify-content: center;
 }
 
-footer .add-container{
+footer .add-container {
     width: 100%;
     padding: 5px;
     background-color: #202020;
@@ -246,7 +444,7 @@ footer .add-container{
     overflow: hidden;
 }
 
-.add-container input[type=text]{
+.add-container input[type=text] {
     width: 100%;
     padding: 8px;
     background-color: transparent;
@@ -256,7 +454,7 @@ footer .add-container{
     color: #fff;
 }
 
-.add-container .add-btn{
+.add-container .add-btn {
     height: 100%;
     width: 35px;
     background-color: #303030;
@@ -267,16 +465,16 @@ footer .add-container{
     cursor: pointer;
 }
 
-.add-container .add-btn:hover{
+.add-container .add-btn:hover {
     background-color: #404040;
 }
 
-.add-container .add-btn:focus{
+.add-container .add-btn:focus {
     background-color: #00ff7f;
 }
 
-@media only screen and (min-width:1000px){
-    body{
+@media only screen and (min-width:1000px) {
+    body {
         padding: 25px;
         display: grid;
         justify-content: center;
@@ -284,132 +482,209 @@ footer .add-container{
         overflow: hidden;
     }
 
-    .list-body{
+    .list-body {
         max-height: 500px;
         border: 1px solid #505050;
         border-radius: 5px;
         overflow: hidden;
     }
 
-    main{
-        max-height: calc(500px - 142px);
+    main {
+        max-height: calc(500px - 146px);
     }
 
-    footer{
+    footer {
         position: relative;
     }
 }
 
-@media (prefers-color-scheme: light){
+@media (prefers-color-scheme: light) {
     body {
         background-color: #fff;
         color: #000;
     }
-    
+
     header {
         background-color: #fff;
         border-bottom: 1px solid #dcdcdc;
     }
-    
+
     .info .list-count {
         background-color: transparent;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.20);
     }
-    .info .login-menu{
+
+    .info .menu {
         background-color: #fff;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.20);
     }
-    
-    .login-menu .icon{
+
+    .menu .icon {
         color: #000;
     }
-    
-    .login-menu .login-container {
+
+    .menu .menu-container {
         background-color: #fff;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.20);
         border: 0;
     }
 
-    .login-container .user-detail .name{
+    .menu-container .user-detail .name {
         background-color: #f1f1f1;
         border-bottom: 1px solid #ddd;
     }
 
-    .login-container .user-detail .email{
+    .menu-container .user-detail .email {
         background-color: #f1f1f1;
     }
 
-    .login-container .log-btn{
+    .menu-container .menu-btn {
         background-color: #f1f1f1;
         border-top: 1px solid #ddd;
     }
 
-    .login-container .log-btn:hover{
+    .menu-container .menu-btn:hover {
         background-color: #ddd;
     }
 
-    .login-container .log-btn .login{
+    .menu-container .menu-btn .menu-in {
         color: #000;
     }
 
-    .login-container .log-btn .logout{
+    .menu-container .menu-btn .menu-out {
         color: #000;
+    }
+
+    /* signup */
+    .signup-box {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .signup-form {
+        background-color: #fff;
+        border: 0;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.20);
+    }
+
+    .signup-form .signup-close {
+        color: #000;
+    }
+
+    .signup-form fieldset {
+        background-color: #f1f1f1;
+        border: 1px solid #ddd;
+    }
+
+    .signup-form fieldset input[type=email],
+    input[type=password] {
+        color: #000;
+    }
+
+    .signup-form .signup-submit-btn {
+        background-color: #ddd;
+        color: #000;
+    }
+
+    .signup-form .signup-submit-btn:hover{
+        background-color: #dcdcdc;
+    }
+
+    .signup-form .signup-submit-btn:focus {
+        background-color: #00bfff;
+    }
+
+    /* login */
+    .login-box {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .login-form {
+        background-color: #fff;
+        border: 0;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.20);
+    }
+
+    .login-form .login-close {
+        color: #000;
+    }
+
+    .login-form fieldset {
+        background-color: #f1f1f1;
+        border: 1px solid #ddd;
+    }
+
+    .login-form fieldset input[type=email],
+    input[type=password] {
+        color: #000;
+    }
+
+    .login-form .login-submit-btn {
+        background-color: #ddd;
+        color: #000;
+    }
+
+    .login-form .login-submit-btn:hover{
+        background-color: #dcdcdc;
+    }
+
+    .login-form .login-submit-btn:focus {
+        background-color: #00bfff;
     }
 
     .list {
         background-color: #fff;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.20);
     }
-    
+
     .list-btn .edit-btn,
     .del-btn {
         background-color: #fff;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.20);
         color: #000;
     }
-    
+
     .list-btn .edit-btn:hover,
     .del-btn:hover {
         background-color: #fff;
     }
-    
+
     .list-btn .edit-btn:focus {
         background-color: #00bfff;
         color: #fff;
     }
-    
+
     .list-btn .del-btn:focus {
         background-color: #ff0000;
         color: #fff;
     }
-    
+
     footer {
         background-color: #fff;
         border-top: 1px solid #dcdcdc;
     }
-    
+
     footer .add-container {
         background-color: #fff;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.20);
     }
-    
+
     .add-container input[type=text] {
         color: #000;
     }
-    
+
     .add-container .add-btn {
         background-color: #f1f1f1;
         color: #000;
     }
-    
+
     .add-container .add-btn:hover {
         background-color: #f1f1f1;
     }
-    
+
     .add-container .add-btn:focus {
         background-color: #ddd;
     }
-    
+
     @media (min-width:1000px) {
         .list-body {
             border: 1px solid #dcdcdc;

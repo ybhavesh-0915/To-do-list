@@ -5,12 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo list</title>
-    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="main-mediaQuery.css">
+    <link rel="stylesheet" href="loginSignup.css">
+    <link rel="stylesheet" href="loginSignup-mediaQuery.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
     <section class="list-body">
+        <!-- to do list page -->
         <header>
             <div class="title">To Do List</div>
             <section class="info">
@@ -30,56 +35,14 @@
                     </div>
                 </div>
             </section>
-
-            <section class="signup-box">
-                <form class="signup-form">
-                    <button type="button" class="signup-close"><i class="icon ri-close-circle-line"></i></button>
-                    <fieldset>
-                        <legend>Name</legend>
-                        <input type="text" id="signup-name" name="name" required>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Email</legend>
-                        <input type="email" id="signup-email" name="email" required>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Password</legend>
-                        <input type="password" id="signup-pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
-                    </fieldset>
-                    <button type="submit" class="signup-submit-btn">Log in</button>
-                    <hr width="100%">
-                    <div class="cng-pg-signup">Don't have account signup</div>
-                </form>
-            </section>
-
-            <section class="login-box">
-                <form class="login-form">
-                    <button type="button" class="login-close"><i class="icon ri-close-circle-line"></i></button>
-                    <fieldset>
-                        <legend>Email</legend>
-                        <input type="email" id="login-email" name="email" required>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Password</legend>
-                        <input type="password" id="login-pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
-                    </fieldset>
-                    <button type="submit" class="login-submit-btn">Log in</button>
-                    <hr width="100%">
-                    <div class="cng-pg-login">Don't have account signup</div>
-                </form>
-            </section>
-
         </header>
 
         <main>
-
             <div class="list">
                 <div class="list-detail">
                     <input type="checkbox" name="checkbox" id="check">
                     <div class="list-title">Drink Water & perform exercise</div>
-                    <div class="time-stamp"><i class="icon ri-time-line"></i>11:30<div class="done">[complete]</div>
+                    <div class="time-stamp"><i class="icon ri-time-line"></i>11:30<div class="done">[completed]</div>
                     </div>
                 </div>
                 <div class="list-btn">
@@ -87,7 +50,6 @@
                     <button type="button" class="del-btn"><i class="icon ri-delete-bin-line"></i></button>
                 </div>
             </div>
-
         </main>
 
         <footer>
@@ -96,6 +58,89 @@
                 <button type="button" class="add-btn"><i class="icon ri-add-large-fill"></i></button>
             </div>
         </footer>
+
+        <!-- login and signup page -->
+        <div class="login-signup-box">
+            <div class="main-form">
+    
+                <section class="usergreet">
+                    <div class="signup-greet-box ">
+                        <h1>Hello, Friend!</h1>
+                        <p>Don't have account?<br>Create it with your personal details to use of all site feature</p>
+                        <button type="button" onclick="signupgreetBox()">Sign Up</button>
+                    </div>
+                    <div class="login-greet-box hidegreet-box">
+                        <h1>Hello, Friend!</h1>
+                        <p>Have a account ?<br> Login with your personal details to use of all site feature</p>
+                        <button type="button" onclick="logingreetBox()">Log In</button>
+                    </div>
+                </section>
+    
+                <section class="forms">
+    
+                    <button type="button" class="close-btn"><i class="ri-close-large-line"></i></button>
+                    <div class="chng-form">
+                        <button type="button" class="login-form hover-chngbtn" onclick="loginform()">Log in</button>
+                        <hr>
+                        <button type="button" class="signup-form" onclick="signupform()">Sign up</button>
+                    </div>
+    
+                    <form class="login-box" autocomplete="off">
+                        <div class="login-email-box">
+                            <label for="login-email"><i class="ri-mail-fill"></i></label>
+                            <input type="email" id="login-email" placeholder="Email" required>
+                        </div>
+                        <div class="login-password-box">
+                            <label for="login-pwd"><i class="ri-lock-password-fill"></i></label>
+                            <input type="password" id="login-pwd" placeholder="Password" required>
+                        </div>
+                        <a href="#" class="forgot-pwd">Forgot Password?</a>
+                        <button type="submit" class="login-submit-btn">Login</button>
+                        <div class="mtd">
+                            <div class="or">
+                                <div class="line"></div>
+                                <span>or</span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="mtd-btn">
+                                <button class="login-google-btn" type="button"><i class="ri-google-fill"></i> Login with Google</button>
+                                <button class="login-github-btn" type="button"><i class="ri-github-fill"></i> Login with Github</button>
+                                <button class="login-apple-btn" type="button"><i class="ri-apple-fill"></i> Login with Apple</button>
+                            </div>
+                        </div>
+                    </form>
+    
+                    <form class="signup-box hide-form" autocomplete="off">
+                        <div class="signup-name-box">
+                            <label for="signup-username"><i class="ri-user-3-fill"></i></label>
+                            <input type="text" id="signup-username" placeholder="Name" required>
+                        </div>
+                        <div class="signup-email-box">
+                            <label for="signup-email"><i class="ri-mail-fill"></i></label>
+                            <input type="email" id="signup-email" placeholder="Email" required>
+                        </div>
+                        <div class="signup-password-box">
+                            <label for="signup-pwd"><i class="ri-lock-password-fill"></i></label>
+                            <input type="password" id="signup-pwd" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="signup-submit-btn">Sign up</button>
+                        <div class="mtd">
+                            <div class="or">
+                                <div class="line"></div><span>or</span>
+                                <div class="line"></div>
+                            </div>
+                            <div class="mtd-btn">
+                                <button class="signup-google-btn" type="button"><i class="ri-google-fill"></i> Sign up with Google</button>
+                                <button class="signup-github-btn" type="button"><i class="ri-github-fill"></i> Sign up with Github</button>
+                                <button class="signup-apple-btn" type="button"><i class="ri-apple-fill"></i> Sign up withApple</button>
+                            </div>
+                        </div>
+                    </form>
+    
+                </section>
+            </div>
+            
+        </div>
     </section>
 </body>
 
